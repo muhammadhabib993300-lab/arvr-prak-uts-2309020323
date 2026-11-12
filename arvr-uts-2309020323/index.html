@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Kartu Belajar AR</title>
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Import map: memberi "nama pendek" untuk library yang dipakai file JS kita -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+      "mindar-image-three": "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+
+    <!-- Kamera + 3D dirender MindAR di sini -->
+    <div id="ar-container"></div>
+
+    <!-- HUD atas: skor, waktu, tombol pengaturan -->
+    <header id="hud" hidden>
+      <div id="score-box">
+        <strong id="score-main">Skor 0</strong>
+        <small id="score-sub">Benar 0/0 • Terbaik 0</small>
+      </div>
+      <div id="timer" hidden>⏱ 0:00</div>
+      <div id="toolbar">
+        <button id="btn-sound"  class="tool" title="Suara">🔊</button>
+        <button id="btn-timer"  class="tool" title="Penghitung waktu">⏱</button>
+        <button id="btn-seq"    class="tool" title="Mode urutan kartu">🔢</button>
+        <button id="btn-reset"  class="tool" title="Reset skor">↺</button>
+      </div>
+    </header>
+
+    <!-- Daftar kartu yang sedang terlihat kamera (untuk 2 kartu sekaligus) -->
+    <div id="chips" hidden></div>
+
+    <!-- Petunjuk saat belum ada kartu terdeteksi -->
+    <div id="hint" hidden>Arahkan kamera ke salah satu kartu 🎴</div>
+
+    <!-- Panel kuis di atas kamera -->
+    <section id="quiz" hidden>
+      <div id="quiz-title"></div>
+      <p id="quiz-fact"></p>
+      <h2 id="quiz-question"></h2>
+      <div id="quiz-options"></div>
+      <div id="quiz-feedback" hidden></div>
+    </section>
+
+    <!-- Layar selesai -->
+    <div id="finish" class="overlay" hidden>
+      <div class="box">
+        <h2>🎉 Selesai!</h2>
+        <p id="finish-text"></p>
+        <div class="row">
+          <button id="finish-again" class="primary">Main lagi</button>
+          <button id="finish-close">Tutup</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layar mulai -->
+    <div id="start" class="overlay">
+      <div class="box">
+        <h1>Kartu Belajar AR</h1>
+        <p>Arahkan kamera ke kartu planet. Model 3D akan muncul, lalu jawab kuis singkatnya!</p>
+        <ol>
+          <li>Izinkan akses kamera.</li>
+          <li>Arahkan ke kartu (cetak atau tampil di layar lain).</li>
+          <li>Jawab kuis. Skor tersimpan otomatis di perangkat.</li>
+        </ol>
+        <button id="btn-start" class="primary">Mulai</button>
+      </div>
+    </div>
+
+    <!-- Layar memuat -->
+    <div id="loading" class="overlay" hidden>
+      <div class="box"><div class="spinner"></div><p id="loading-text">Memuat…</p></div>
+    </div>
+
+    <!-- Layar error -->
+    <div id="error" class="overlay" hidden>
+      <div class="box">
+        <h2>⚠️ Terjadi masalah</h2>
+        <pre id="error-text"></pre>
+        <button id="error-reload" class="primary">Muat ulang</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

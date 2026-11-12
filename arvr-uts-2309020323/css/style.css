@@ -1,0 +1,78 @@
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #000;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #fff; }
+[hidden] { display: none !important; }
+
+#app { position: fixed; inset: 0; }
+#ar-container { position: absolute; inset: 0; overflow: hidden; }
+
+/* ---------- HUD ---------- */
+#hud { position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; align-items: center; gap: 8px; padding: 10px 12px;
+  background: linear-gradient(to bottom, rgba(0,0,0,.65), transparent); }
+#score-box { display: flex; flex-direction: column; line-height: 1.2; }
+#score-main { font-size: 18px; }
+#score-sub { opacity: .85; font-size: 12px; }
+#timer { margin-left: auto; font-variant-numeric: tabular-nums; font-weight: 700;
+  background: rgba(0,0,0,.45); padding: 6px 10px; border-radius: 999px; }
+#toolbar { display: flex; gap: 6px; margin-left: auto; }
+#timer:not([hidden]) + #toolbar { margin-left: 0; }
+.tool { width: 38px; height: 38px; border-radius: 50%; border: 0; font-size: 17px;
+  background: rgba(255,255,255,.18); color: #fff; backdrop-filter: blur(6px); cursor: pointer; }
+.tool[aria-pressed="false"] { opacity: .45; }
+.tool[aria-pressed="true"]  { background: rgba(80,200,120,.55); }
+
+/* ---------- Chips kartu terlihat ---------- */
+#chips { position: absolute; top: 66px; left: 0; right: 0; z-index: 10;
+  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; padding: 0 12px; }
+.chip { border: 2px solid transparent; border-radius: 999px; padding: 6px 12px; font-size: 13px;
+  background: rgba(0,0,0,.55); color: #fff; cursor: pointer; }
+.chip.active { border-color: #ffd54a; background: rgba(255,213,74,.25); }
+.chip .tick { margin-left: 4px; }
+
+/* ---------- Hint ---------- */
+#hint { position: absolute; left: 50%; bottom: 14%; transform: translateX(-50%); z-index: 10;
+  background: rgba(0,0,0,.6); padding: 10px 16px; border-radius: 14px; text-align: center;
+  max-width: 88%; font-size: 15px; }
+
+/* ---------- Panel kuis ---------- */
+#quiz { position: absolute; left: 0; right: 0; bottom: 0; z-index: 10;
+  max-height: 62%; overflow-y: auto; padding: 14px 14px calc(14px + env(safe-area-inset-bottom));
+  background: rgba(16,18,32,.92); border-top-left-radius: 20px; border-top-right-radius: 20px;
+  box-shadow: 0 -6px 24px rgba(0,0,0,.5); }
+#quiz-title { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #ffd54a; font-weight: 700; }
+#quiz-fact { margin: 4px 0 8px; font-size: 13px; opacity: .85; }
+#quiz-question { margin: 0 0 10px; font-size: 17px; line-height: 1.35; }
+#quiz-options { display: grid; gap: 8px; }
+.opt { display: flex; gap: 10px; align-items: center; text-align: left; width: 100%;
+  padding: 12px; border-radius: 12px; border: 2px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.07); color: #fff; font-size: 15px; cursor: pointer; }
+.opt .letter { flex: 0 0 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+  background: rgba(255,255,255,.18); font-weight: 700; font-size: 13px; }
+.opt:disabled { cursor: default; }
+.opt.correct { border-color: #4cd964; background: rgba(76,217,100,.22); }
+.opt.wrong   { border-color: #ff5a5f; background: rgba(255,90,95,.22); }
+#quiz-feedback { margin-top: 10px; padding: 10px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; }
+#quiz-feedback.good { background: rgba(76,217,100,.2); }
+#quiz-feedback.bad  { background: rgba(255,90,95,.2); }
+#quiz-feedback.lock { background: rgba(255,213,74,.2); }
+
+/* ---------- Overlay ---------- */
+.overlay { position: absolute; inset: 0; z-index: 30; display: grid; place-items: center; padding: 20px;
+  background: rgba(8,10,24,.9); }
+.box { width: min(420px, 100%); text-align: center; background: #1b1e36; border-radius: 20px; padding: 24px; }
+.box h1, .box h2 { margin-top: 0; }
+.box ol { text-align: left; line-height: 1.6; padding-left: 20px; }
+.box pre { white-space: pre-wrap; text-align: left; background: rgba(0,0,0,.35);
+  padding: 12px; border-radius: 10px; font-size: 13px; }
+.row { display: flex; gap: 10px; justify-content: center; }
+button.primary, #finish-close { border: 0; border-radius: 12px; padding: 12px 20px; font-size: 16px; cursor: pointer; color: #fff; }
+button.primary { background: #4f7cff; }
+#finish-close { background: rgba(255,255,255,.18); }
+.spinner { width: 42px; height: 42px; margin: 0 auto 12px; border-radius: 50%;
+  border: 4px solid rgba(255,255,255,.2); border-top-color: #fff; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (min-width: 720px) {
+  #quiz { left: 50%; right: auto; width: 560px; transform: translateX(-50%); border-radius: 20px; bottom: 16px; }
+}

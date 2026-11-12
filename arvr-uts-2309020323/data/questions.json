@@ -1,0 +1,120 @@
+{
+  "title": "Kartu Belajar: Tata Surya dan Galaksi",
+  "cards": [
+    {
+      "id": "matahari",
+      "targetIndex": 3,
+      "title": "Matahari",
+      "model": "sun",
+      "fact": "Matahari adalah pusat tata surya dan sumber cahaya serta panas utama bagi planet-planet."
+    },
+    {
+      "id": "bumi",
+      "targetIndex": 0,
+      "title": "Bumi",
+      "model": "earth",
+      "fact": "Bumi adalah planet ketiga dari Matahari dan satu-satunya planet yang diketahui punya kehidupan."
+    },
+    {
+      "id": "mars",
+      "targetIndex": 1,
+      "title": "Mars",
+      "model": "mars",
+      "fact": "Mars adalah planet keempat dari Matahari dan punya dua bulan kecil bernama Phobos dan Deimos."
+    },
+    {
+      "id": "saturnus",
+      "targetIndex": 2,
+      "title": "Saturnus",
+      "model": "saturn",
+      "fact": "Saturnus adalah planet gas raksasa keenam dari Matahari dengan sistem cincin yang sangat luas."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q01",
+      "cardId": "matahari",
+      "question": "Matahari termasuk jenis benda langit apa?",
+      "options": ["Planet", "Bintang", "Satelit alami", "Komet"],
+      "answerIndex": 1,
+      "explanation": "Matahari adalah bintang, yaitu bola gas panas yang memancarkan cahayanya sendiri."
+    },
+    {
+      "id": "q02",
+      "cardId": "matahari",
+      "question": "Tata surya kita berada di dalam galaksi yang bernama apa?",
+      "options": ["Andromeda", "Bima Sakti", "Triangulum", "Pusaran"],
+      "answerIndex": 1,
+      "explanation": "Matahari dan seluruh planetnya berada di galaksi Bima Sakti (Milky Way)."
+    },
+    {
+      "id": "q03",
+      "cardId": "matahari",
+      "question": "Kira-kira berapa bagian massa seluruh tata surya yang dimiliki Matahari?",
+      "options": ["Sekitar 10%", "Sekitar 50%", "Sekitar 75%", "Lebih dari 99%"],
+      "answerIndex": 3,
+      "explanation": "Matahari memegang lebih dari 99% massa tata surya, sehingga gravitasinya mengikat semua planet."
+    },
+    {
+      "id": "q04",
+      "cardId": "bumi",
+      "question": "Berapa lama Bumi mengelilingi Matahari satu kali penuh?",
+      "options": ["24 jam", "30 hari", "365 hari (1 tahun)", "7 hari"],
+      "answerIndex": 2,
+      "explanation": "Satu kali revolusi Bumi memakan waktu sekitar 365 hari. Itulah yang kita sebut satu tahun."
+    },
+    {
+      "id": "q05",
+      "cardId": "bumi",
+      "question": "Berapa lama Bumi berputar satu kali pada porosnya (rotasi)?",
+      "options": ["Sekitar 12 jam", "Sekitar 24 jam", "Sekitar 7 hari", "Sekitar 365 hari"],
+      "answerIndex": 1,
+      "explanation": "Satu kali rotasi Bumi sekitar 24 jam. Rotasi inilah yang menyebabkan siang dan malam."
+    },
+    {
+      "id": "q06",
+      "cardId": "bumi",
+      "question": "Apa nama satelit alami Bumi?",
+      "options": ["Titan", "Phobos", "Bulan", "Europa"],
+      "answerIndex": 2,
+      "explanation": "Bulan adalah satu-satunya satelit alami Bumi. Ia mengorbit Bumi sekitar sebulan sekali."
+    },
+    {
+      "id": "q07",
+      "cardId": "mars",
+      "question": "Mengapa Mars dijuluki Planet Merah?",
+      "options": [
+        "Permukaannya mengandung besi oksida (karat)",
+        "Permukaannya tertutup lava",
+        "Atmosfernya terbakar",
+        "Sangat dekat dengan Matahari"
+      ],
+      "answerIndex": 0,
+      "explanation": "Debu dan batuan di Mars kaya besi oksida, mirip karat, sehingga tampak kemerahan."
+    },
+    {
+      "id": "q08",
+      "cardId": "mars",
+      "question": "Gunung berapi tertinggi di tata surya terdapat di Mars. Apa namanya?",
+      "options": ["Olympus Mons", "Mauna Kea", "Gunung Everest", "Vesuvius"],
+      "answerIndex": 0,
+      "explanation": "Olympus Mons di Mars tingginya sekitar 22 km, hampir tiga kali tinggi Gunung Everest."
+    },
+    {
+      "id": "q09",
+      "cardId": "saturnus",
+      "question": "Apa ciri paling terkenal dari Saturnus?",
+      "options": ["Punya cincin yang besar", "Berwarna hijau", "Tidak punya gravitasi", "Planet terkecil"],
+      "answerIndex": 0,
+      "explanation": "Cincin Saturnus tersusun dari es dan batuan dan terlihat jelas dari Bumi lewat teleskop."
+    },
+    {
+      "id": "q10",
+      "cardId": "saturnus",
+      "question": "Apa nama satelit terbesar Saturnus yang punya atmosfer tebal?",
+      "options": ["Titan", "Europa", "Io", "Phobos"],
+      "answerIndex": 0,
+      "explanation": "Titan adalah bulan terbesar Saturnus dan salah satu dari sedikit bulan yang punya atmosfer tebal."
+    }
+  ]
+}
